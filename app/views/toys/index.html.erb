@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
+<div class="container text-right">
+  <%= link_to '新增玩具', new_toy_path, class: "btn btn-info" %>
+</div>
 
-<h1>Listing Toys</h1>
+<h1>熊熊玩具店</h1>
 
-<table>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Amount</th>
-      <th colspan="3"></th>
+      <th>產品名稱</th>
+      <th>金額</th>
+      <th>剩餘數量</th>
+      <th>小記</th>
+      <th>功能按鈕</th>
     </tr>
   </thead>
 
@@ -18,14 +22,13 @@
         <td><%= toy.name %></td>
         <td><%= toy.price %></td>
         <td><%= toy.amount %></td>
-        <td><%= link_to 'Show', toy %></td>
-        <td><%= link_to 'Edit', edit_toy_path(toy) %></td>
-        <td><%= link_to 'Destroy', toy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= toy.price * toy.amount %></td>
+        <td>
+          <%= link_to '顯示', toy, class: "btn btn-primary" %>
+          <%= link_to '編輯', edit_toy_path(toy), class: "btn btn-warning" %>
+          <%= link_to '刪除', toy, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Toy', new_toy_path %>
