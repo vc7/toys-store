@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707135913) do
+ActiveRecord::Schema.define(version: 20150707140526) do
 
   create_table "toys", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "amount",     default: 0
   end
 
 end
