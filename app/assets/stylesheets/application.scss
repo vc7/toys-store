@@ -1,0 +1,9 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+// 加入 bootstrap
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
